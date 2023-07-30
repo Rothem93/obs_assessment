@@ -6,9 +6,8 @@
     "test": "jest --coverage --detectOpenHandles",
     "start": "ts-node-dev ./src/index.ts",
     "build": "tsc",
-    "console": "npm run build && ts-node ./dist/index.js",
-    "console_dev": "ts-node-dev --transpile-only ./src/application/robot-console.ts",
-    "run-robot": "npm run console && node dist/robot-script.js"
+    "obs_test": "npm run build && ts-node ./dist/index.js",
+    "obs_test_dev": "ts-node-dev --transpile-only ./src/application/robot-console.ts"
   },
   "author": "César Molinero Gómez",
   "license": "ISC",
