@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+const { spawn } = require("child_process");
+
+const args = process.argv.slice(2);
+const inputFile = args.length >= 1 ? args[0] : null;
+const outputFile = args.length >= 2 ? args[1] : null;
+
+let option = ["./dist/index.js"]
+
+if(inputFile && outputFile){
+  option.push(inputFile);
+  option.push(outputFile);
+}
+
+const childProcess = spawn("node", option, {
+  stdio: "inherit",
+});
+
+childProcess.on("exit", (code) => {
+  process.exit(code);
+});
